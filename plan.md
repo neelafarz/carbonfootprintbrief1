@@ -42,35 +42,35 @@ Replace or expand the implementation placeholders below with tasks specific to t
 
 #### Checkpoint 1 — evidence and calculation foundation
 
-- [ ] Inventory existing inputs, comparisons, report/share behavior, and numerical claims; map each to the approved specification and identify incompatible daily assumptions or unsupported wording.
-- [ ] Verify and version the candidate factors for text, images, video, coding, streaming by device, meetings, grid carbon, and available water. Record units, boundaries, provenance, dates, and scenario meaning; reject or leave unknown any factor that cannot support the proposed calculation.
-- [ ] Define a common activity result for energy, carbon, and water that distinguishes known values, unknown values, and incomplete subtotals; define same-period aggregation and avoid double-counting included components.
-- [ ] Check the baseline page locally and preserve a reproducible reference for comparison during the build.
+- [x] Inventory existing inputs, comparisons, report/share behavior, and numerical claims; map each to the approved specification and identify incompatible daily assumptions or unsupported wording.
+- [x] Verify and version the candidate factors for text, images, video, coding, streaming by device, meetings, grid carbon, and available water. Record units, boundaries, provenance, dates, and scenario meaning; reject or leave unknown any factor that cannot support the proposed calculation.
+- [x] Define a common activity result for energy, carbon, and water that distinguishes known values, unknown values, and incomplete subtotals; define same-period aggregation and avoid double-counting included components.
+- [ ] Check the baseline page locally and preserve a reproducible reference for comparison during the build. (The original tracked page remains recoverable in Git; it was not browser checked before replacement.)
 
 #### Checkpoint 2 — professional AI tasks and project totals
 
-- [ ] Present visible text, image, video, and coding task options; let employees add, edit, and remove tasks without random selection.
-- [ ] Implement text length × count with reversible words/tokens display conversion; implement coding tokens × count, total generated images, and combined generated video duration.
-- [ ] Show task-level energy/carbon/available water, unknown metrics, and project subtotals/totals. Ensure revisions and rejected image/video outputs are counted once through the entered totals.
+- [x] Present visible text, image, video, and coding task options; let employees add, edit, and remove tasks without random selection.
+- [x] Implement text length × count with reversible words/tokens display conversion; implement coding tokens × count, total generated images, and combined generated video duration.
+- [x] Show task-level energy/carbon/available water, unknown metrics, and project subtotals/totals. Ensure revisions and rejected image/video outputs are counted once through the entered totals.
 
 #### Checkpoint 3 — broader digital comparisons
 
-- [ ] Add streaming duration and visible device options using verified, labelled device scenarios; include only supported energy/carbon/water metrics.
-- [ ] Add personal video-meeting duration in participant-hours, with device/network/data-centre boundary notes and no implicit participant multiplier.
-- [ ] Combine these activities with the AI project on the same selected period and clearly distinguish project totals from broader comparison totals.
+- [x] Add streaming duration and visible device options using verified, labelled device scenarios; include only supported energy/carbon/water metrics.
+- [x] Add personal video-meeting duration in participant-hours, with device/network/data-centre boundary notes and no implicit participant multiplier.
+- [x] Combine these activities with the AI project on the same selected period and clearly distinguish project totals from broader comparison totals.
 
 #### Checkpoint 4 — uncertainty, presentation, and integration
 
-- [ ] Expose low/central/high scenarios where source evidence supports them; recalculate affected rows and totals and explain what changed. Remove unsupported statistical confidence language.
-- [ ] Attach plain-language source, year/geography, boundary, and missing-component notes to factual and numerical claims; make unknown water and other omitted metrics visible.
-- [ ] Bring methodology, verified comparison charts, share links, reset behavior, and generated report into line with the new activity model; omit inherited comparisons whose units, period, boundary, or sources cannot be verified.
-- [ ] Check keyboard use, labels, mobile layout, and readability for Alex, Jordan, and Robin's reference paths.
+- [x] Expose low/central/high scenarios where source evidence supports them; recalculate affected rows and totals and explain what changed. Remove unsupported statistical confidence language.
+- [x] Attach plain-language source, year/geography, boundary, and missing-component notes to factual and numerical claims; make unknown water and other omitted metrics visible.
+- [x] Bring methodology, verified comparison charts, share links, reset behavior, and generated report into line with the new activity model; omit inherited comparisons whose units, period, boundary, or sources cannot be verified.
+- [ ] Check keyboard use, labels, mobile layout, and readability for Alex, Jordan, and Robin's reference paths. (Labels and 500px layout inspected; manual keyboard review remains.)
 
 #### Checkpoint 5 — verify and deliver
 
-- [ ] Check factor arithmetic and unit conversions against source records, including text/coding multiplication, revisions, participant-hours, device choice, scenario switching, missing metrics, and compatible totals.
-- [ ] Run the calculator locally and exercise the three reference profiles on desktop and narrow screens; record observed results and any limits.
-- [ ] Keep `spec.md` aligned if an intended behavior changes, update this plan when the route changes, and commit meaningful verified checkpoints without secrets.
+- [x] Check factor arithmetic and unit conversions against source records, including text/coding multiplication, revisions, participant-hours, device choice, scenario switching, missing metrics, and compatible totals.
+- [x] Run the calculator locally and exercise the three reference profiles on desktop and narrow screens; record observed results and any limits.
+- [x] Keep `spec.md` aligned if an intended behavior changes, update this plan when the route changes, and commit meaningful verified checkpoints without secrets.
 
 ### Verification
 
@@ -90,6 +90,8 @@ Record material changes to the approach, sequence, or checklist and explain why 
 - 27 September 2026: Drafted the five-feature implementation sequence from the approved specification and source gaps in `research.md`. Plan approval remains pending.
 - 27 September 2026: User chose to keep existing daily/lifestyle comparisons only when their units and sources can be verified; the approach also requires a compatible period and boundary before using them in the new project view.
 - 27 September 2026: User approved the implementation plan in the planning conversation: “looks good to me”.
+- 27 September 2026: Implementation uses Mistral's explicit 400-token text disclosure for carbon and water, an older image energy benchmark, three open-video energy scenarios, Carbon Trust device-specific streaming carbon, and German case-study meeting carbon. Coding impacts and unsupported metrics remain unknown. The old daily/lifestyle comparisons were omitted because their period and boundaries do not match the project view. Browser rendering was checked for Alex, Jordan, and Robin at desktop/narrow widths; arithmetic was checked separately. The user-verification gates remain open.
+- 27 September 2026: Local verification: JavaScript syntax and calculation checks passed for word/token conversion, text and coding workload, image/video energy, scenario ordering, streaming/meeting carbon, and unknown subtotals. Python static server returned HTTP 200 for the page and all modules; headless Chrome rendered all three profile states, with Robin at narrow width. A 500px screenshot showed wrapped controls. No manual keyboard interaction or source-by-source user review was performed.
 
 ## Commands
 
