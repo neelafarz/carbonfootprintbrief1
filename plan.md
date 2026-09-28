@@ -18,7 +18,15 @@ Guide planning one stage at a time. Surface dependencies, risks, and verificatio
 
 ## Approach
 
-Describe the technical approach, important dependencies, and the order in which the features will be built. Explain any non-obvious choices and identify likely risks.
+Approved implementation approach — 27 September 2026.
+
+Keep the calculator as a locally served, browser-only page. Separate factor records and calculation functions from the existing `index.html` interface so each figure can be traced to a source and checked without depending on the display. Rework the fixed daily prompt rows into editable project activities: text, image, video, and coding. Add streaming and personal video-meeting inputs alongside the project, then calculate a same-period comparison and show low/central/high assumption scenarios only for factors that support them. Carry forward an existing daily or lifestyle comparison only when its units, time period, boundary, and sources can be verified for use with the new project view; otherwise omit it from the new comparison.
+
+Use one factor record per activity/scenario: source and version, unit, configuration, geography/year, included and excluded components, metric coverage, and uncertainty meaning. An unavailable metric stays unknown in rows and totals; a known subtotal must say which activities it omits. Keep electricity, carbon, and water calculations separate so factors with different boundaries are not silently combined. Text words/tokens should have one canonical stored workload to avoid conversion drift; image count and video duration already include rejected outputs, so no extra revision multiplier is applied.
+
+The main dependency is evidence, not styling: `research.md` identifies historical streaming/meeting scenarios and unresolved commercial image, video, and coding factors. Before exposing any numerical default, reproduce its source calculation or label it as a narrow historical/illustrative scenario. If no defensible factor exists, show the workload and an unknown impact rather than inventing a coefficient. Audit the old EcoLogits snapshot, inherited “95% confidence” wording, and daily/lifestyle comparisons before reusing them.
+
+Build in checkpoints: evidence and calculation rules; professional AI tasks and project totals; streaming and meetings; assumptions and source display; integration and verification. The existing page has no package setup, and `node` is unavailable in this workspace, so local verification should use a simple static server and browser checks, with dependency-free calculation checks where feasible.
 
 ## Checklist
 
@@ -26,14 +34,43 @@ Replace or expand the implementation placeholders below with tasks specific to t
 
 ### Approval gates
 
-- [ ] User has reviewed, verified, and approved the research claims and selected features
-- [ ] User has reviewed and approved the specification
-- [ ] User has reviewed and approved the implementation approach and task sequence
+- [ ] User has independently verified the research claims and selected features (approval recorded in `research.md`; independent verification remains open there)
+- [x] User has reviewed and approved the specification (recorded in `spec.md`, 27 September 2026)
+- [x] User has reviewed and approved the implementation approach and task sequence (27 September 2026)
 
 ### Implementation
 
-- [ ] Replace these placeholders with concrete tasks for each feature and supporting change
-- [ ] Implement the tasks in meaningful checkpoints, keeping the plan and specification aligned with approved changes
+#### Checkpoint 1 — evidence and calculation foundation
+
+- [ ] Inventory existing inputs, comparisons, report/share behavior, and numerical claims; map each to the approved specification and identify incompatible daily assumptions or unsupported wording.
+- [ ] Verify and version the candidate factors for text, images, video, coding, streaming by device, meetings, grid carbon, and available water. Record units, boundaries, provenance, dates, and scenario meaning; reject or leave unknown any factor that cannot support the proposed calculation.
+- [ ] Define a common activity result for energy, carbon, and water that distinguishes known values, unknown values, and incomplete subtotals; define same-period aggregation and avoid double-counting included components.
+- [ ] Check the baseline page locally and preserve a reproducible reference for comparison during the build.
+
+#### Checkpoint 2 — professional AI tasks and project totals
+
+- [ ] Present visible text, image, video, and coding task options; let employees add, edit, and remove tasks without random selection.
+- [ ] Implement text length × count with reversible words/tokens display conversion; implement coding tokens × count, total generated images, and combined generated video duration.
+- [ ] Show task-level energy/carbon/available water, unknown metrics, and project subtotals/totals. Ensure revisions and rejected image/video outputs are counted once through the entered totals.
+
+#### Checkpoint 3 — broader digital comparisons
+
+- [ ] Add streaming duration and visible device options using verified, labelled device scenarios; include only supported energy/carbon/water metrics.
+- [ ] Add personal video-meeting duration in participant-hours, with device/network/data-centre boundary notes and no implicit participant multiplier.
+- [ ] Combine these activities with the AI project on the same selected period and clearly distinguish project totals from broader comparison totals.
+
+#### Checkpoint 4 — uncertainty, presentation, and integration
+
+- [ ] Expose low/central/high scenarios where source evidence supports them; recalculate affected rows and totals and explain what changed. Remove unsupported statistical confidence language.
+- [ ] Attach plain-language source, year/geography, boundary, and missing-component notes to factual and numerical claims; make unknown water and other omitted metrics visible.
+- [ ] Bring methodology, verified comparison charts, share links, reset behavior, and generated report into line with the new activity model; omit inherited comparisons whose units, period, boundary, or sources cannot be verified.
+- [ ] Check keyboard use, labels, mobile layout, and readability for Alex, Jordan, and Robin's reference paths.
+
+#### Checkpoint 5 — verify and deliver
+
+- [ ] Check factor arithmetic and unit conversions against source records, including text/coding multiplication, revisions, participant-hours, device choice, scenario switching, missing metrics, and compatible totals.
+- [ ] Run the calculator locally and exercise the three reference profiles on desktop and narrow screens; record observed results and any limits.
+- [ ] Keep `spec.md` aligned if an intended behavior changes, update this plan when the route changes, and commit meaningful verified checkpoints without secrets.
 
 ### Verification
 
@@ -49,6 +86,10 @@ Replace or expand the implementation placeholders below with tasks specific to t
 ## Revisions
 
 Record material changes to the approach, sequence, or checklist and explain why they were made.
+
+- 27 September 2026: Drafted the five-feature implementation sequence from the approved specification and source gaps in `research.md`. Plan approval remains pending.
+- 27 September 2026: User chose to keep existing daily/lifestyle comparisons only when their units and sources can be verified; the approach also requires a compatible period and boundary before using them in the new project view.
+- 27 September 2026: User approved the implementation plan in the planning conversation: “looks good to me”.
 
 ## Commands
 
